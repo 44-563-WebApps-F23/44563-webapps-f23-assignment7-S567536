@@ -39,7 +39,7 @@
                 for (let i = 0; i < 9; i++) {
                     setTimeout(function() {
                         document.getElementById("counter").innerHTML = i;
-                    }, ((8-i)*1000));
+                    }, ((Math.floor(Math.random() * (10 - 2 + 1)) + 2 - i) * 1000));
                 }
 
                 setTimeout(function() {
@@ -51,7 +51,7 @@
                         elapsedTime = endTime - reactTime;
                         document.getElementById("target").innerHTML = "Time was"+elapsedTime+"milliseconds";
                     }
-                }, (8*1000));
+                }, Math.floor(Math.random() * (10 - 2 + 1)) + 2 * 1000);
                 
             }
             

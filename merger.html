@@ -30,6 +30,7 @@
     <button onclick="AddEnd()" class="btn btn-success">Add Element</button><br>
     <button onclick="Remove()" class="btn btn-danger">Remove</button><br>
     <button onclick="Addfront()" class="btn btn-success">Add Front Element</button><br>
+    <button onclick="swap()" class="btn btn-primary">swap</button><br>
 		<div class="flex-container" id="target">
 		  <div class="merger">row item 1</div>   
 		  <div class="merger">row item 2</div>  
@@ -67,6 +68,15 @@
         flex = document.getElementById("target");
         first = flex.firstChild;
         flex.insertBefore(divs, first);
+    }
+
+    function swap(){
+        var mergerItems = document.getElementsByClassName("merger");
+        var length = mergerItems.length;
+        var i = document.getElementsByClassName("merger")[Math.floor(Math.random() * length)];
+        var flex = document.getElementById("target");
+        firstChild = flex.firstChild;
+        flex.insertBefore(i, firstChild);
     }
 	
 </script>
