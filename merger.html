@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+<title>merger</title>
+</head>
+
+
+
+<body>
+    <h1>Rishik Reddy Endurthy builds a merger</h1>
+
+    <input type="text" id = input ><br> 
+    <button onclick="AddEnd()" class="btn btn-success">Add Element</button><br>
+    <button onclick="Remove()" class="btn btn-danger">Remove</button><br>
+    <button onclick="Addfront()" class="btn btn-success">Add Front Element</button><br>
+		<div class="flex-container" id="target">
+		  <div class="merger">row item 1</div>   
+		  <div class="merger">row item 2</div>  
+		  <div class="merger">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Add one</button>
+	
+	
+</body>
+<script>
+    function AddEnd() {
+            text = document.getElementById("input").value;
+            out = document.createElement("div");
+            out.innerHTML = text;
+            out.className = "merger";
+            flex = document.getElementById("target");
+            flex.appendChild(out);
+        }
+    function Remove(){
+        mergerItems = document.getElementsByClassName("merger");
+            length = mergerItems.length;
+
+            if (length > 0) {
+                middleItem = Math.floor(length/2);
+                mergerItems[middleItem].remove();
+            }
+    }
+    
+    function Addfront(){
+        text = document.getElementById("input").value;
+        divs = document.createElement("div");
+        divs.innerHTML = text;
+        divs.className = "merger";
+        flex = document.getElementById("target");
+        first = flex.firstChild;
+        flex.insertBefore(divs, first);
+    }
+	
+</script>
+</html>	
