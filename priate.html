@@ -99,8 +99,8 @@
     var checkcount=0;
     var penalty=0;
     var lastcheck=0;
-    var treasureLocation = Math.floor(Math.random() * 25);;
-    var trapLocation= Math.floor(Math.random() * 25);;
+    var treasureLocation = Math.floor(Math.random() * 25);
+    var trapLocation= Math.floor(Math.random() * 25);
     var gameOver=false;
     var position;
 
@@ -159,17 +159,20 @@
  }
  
  function reset(){
-    for(let i =0;i<24;i++){
+    for(let i =0;i<25;i++){
         id = document.getElementById(ids[i]);
         id.src = "treasure1.jpg";
     }
-     treasureLocation=Math.floor(Math.random()*25)
-     trapLocation=Math.floor(Math.random()*25)
+    gameOver=false;
+    penalty=0;
+    checkcount=0;
+    treasureLocation = Math.floor(Math.random() * 25);;
+    trapLocation= Math.floor(Math.random() * 25);;
+    document.getElementById("location").innerHTML = "Number of locations checked is"+ checkCount;
+    document.getElementById("penalty").innerHTML = "Penalty is"+ penalty;
 
-
-        document.getElementById("location").innerHTML = "Number of locations checked is"+ checkCount;
-        document.getElementById("penalty").innerHTML = "Penalty is"+ penalty;
  }
+
         
 </script>
 
